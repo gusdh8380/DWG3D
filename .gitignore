@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Environments
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Logs
+*.log
+logs/
+
+# Upload temp
+uploads/
+tmp/
+
+# Unity
+unity/Library/
+unity/Temp/
+unity/Obj/
+unity/Build/
+unity/Logs/
+unity/*.csproj
+unity/*.sln
