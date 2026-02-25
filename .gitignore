@@ -31,6 +31,14 @@ logs/
 uploads/
 tmp/
 
+# Test outputs (generated artifacts)
+backend/tests/output/
+backend/tests/sample_3d.dxf
+
+# Python cache
+backend/**/__pycache__/
+backend/**/*.pyc
+
 # Unity
 unity/Library/
 unity/Temp/
