@@ -19,7 +19,7 @@ from workers.celery_app import app
 from app.core.config import settings
 from app.core.database import get_sync_db
 from app.core.storage import download_to_file, upload_bytes, object_public_url
-from app.models.project import Project, ConversionJob
+from app.models import Project, ConversionJob, Layer, DwgObject  # noqa: F401 — 전체 임포트로 mapper 초기화
 from pipeline.dxf_parser import parse_dxf
 from pipeline.mock_aps import generate_mock_scene
 from pipeline.glb_exporter import export_glb
@@ -211,8 +211,6 @@ def convert_file_task(self: Task, project_id: str) -> dict:
 
 def _save_objects_to_db(db: Session, project_id: str, parse_result) -> None:
     """레이어와 오브젝트를 DB에 저장한다."""
-    from app.models.dwg_object import Layer, DwgObject
-
     # 레이어 저장
     layer_orm_map: dict[str, Layer] = {}
     for pl in parse_result.layers:
